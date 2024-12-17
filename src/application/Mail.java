@@ -5,11 +5,11 @@ import javax.mail.internet.InternetAddress;
 
 public class Mail {
 
-	//email mittente
+    // Sender mail
     static String FROM;
-    //Nome mittente
+    // Sender name
     static String FROMNAME;
-    //email destinatario
+    // Receiver mail
     static String TO;//
     
     // Replace smtp_username with your Amazon SES SMTP username.
@@ -25,16 +25,11 @@ public class Mail {
     static final String HOST = "email-smtp.us-west-2.amazonaws.com";
     // The port you will connect to on SES SMTP endpoint. 
     static final int PORT = 587;
-    //Oggetto della mail
+    // Mail subject
     static String SUBJECT;
-    //Corpo della mail
+    // Mail Text
     static String BODY;
     
-    /** VERIFICA DELLA VALIDITA' DIN UN INDIRIZZO EMAIL
-     * 
-     * @param email è l'email da verificare
-     * @return true se lindirizzo email è corretto; false se non corretto.
-     */
     public static boolean isValidEmailAddress(String email) {
       boolean result = true;
       try {
