@@ -28,6 +28,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/* Edit User Class */
 public class ModificaUtente implements Initializable {
 	
     @FXML private StackPane rootPane;
@@ -37,7 +38,6 @@ public class ModificaUtente implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//Otteniento e inserimento degli utenti nella choicebox
 		ArrayList<Utente> elencoUtenti = IoOperations.getUtenti();
 		ObservableList<String> utenti = FXCollections.observableArrayList();
 				
@@ -50,6 +50,7 @@ public class ModificaUtente implements Initializable {
 	}
 	
 	@FXML
+	/* Back button clicked */
 	public void pulsanteAnnullaCliccato() {
 		try {
 			Parent ritornoPaginaAdmin;
@@ -69,6 +70,7 @@ public class ModificaUtente implements Initializable {
 	}
 	
 	@FXML
+	/* Confirm Password Edit Button */
 	public void pulsanteConfermaModificaPassword() {
 		if(choiceboxUtente.getValue() == null) {
 			
@@ -80,7 +82,7 @@ public class ModificaUtente implements Initializable {
 				dialog.close();
 			});
 			dialogLayout.setHeading(new Label("Modifica di un account"));
-			dialogLayout.setBody(new Label("Il campo nome utente è vuoto. Si prega di selezionare un utente da rimuovere."));
+			dialogLayout.setBody(new Label("Il campo nome utente Ã¨ vuoto. Si prega di selezionare un utente da rimuovere."));
 			dialogLayout.setActions(button);
 			dialog.show();
 		}
