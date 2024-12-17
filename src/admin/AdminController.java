@@ -34,6 +34,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+/** 
+ * Admin Main Class to manage all the admin-section
+*/
 public class AdminController implements Initializable {
 	    
     //----ADMIN scene----//  
@@ -66,9 +69,9 @@ public class AdminController implements Initializable {
     ObservableList<Utente> values = FXCollections.observableArrayList();
     ObservableList<Classe> valori = FXCollections.observableArrayList();
     
-	/**Metodo per INIZIALIZZARE LA SCHERMATA DELL'AMMINISTRATORE e gestire i due menù
-	 * @param url -> valore null perché non usati (Argomento del metodo)
-	 * @param rb  -> valore null perché non usati (Argomento del metodo)
+	/**Method to INITIALIZE THE ADMIN SCREEN and manage the two menu:
+	 * @param url -> null value because not used (method argument)
+	 * @param rb  -> null value because not used (method argument)
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
@@ -109,7 +112,7 @@ public class AdminController implements Initializable {
 		ArrayList<Utente> utenti = new ArrayList<>();
 		utenti = IoOperations.getUtenti();
 		
-		//Creazione elenco utenti e preparazione per caricarli sulla tabella
+		// Creation of the list of users and preparation to load them in the table
 		int i = 0;
 		while(i < utenti.size()) {
 			values.add(new Utente(utenti.get(i).getMatricola(), utenti.get(i).getNome(), utenti.get(i).getCognome(),
@@ -130,7 +133,7 @@ public class AdminController implements Initializable {
 	    ArrayList<Classe> classi = new ArrayList<>();
 		classi = IoOperations.getElencoClassi();
 		
-		//Creazione elenco classi e preparazione per caricarle sulla tabella
+		// Creation of the list of classes and prepraration to load them in the table
 		i = 0;
 		while(i < classi.size()) {
 		 	valori.add(new Classe(classi.get(i).getCodice_classe(), classi.get(i).getClasse(), classi.get(i).getAnno_scolastico()));
@@ -142,7 +145,7 @@ public class AdminController implements Initializable {
 	    tabellaClassi.setItems(valori);
 	    
 	    
-	    //Ricerca campi utente
+	    // Search user fields
 	    FilteredList<Utente> filteredData = new FilteredList<>(values, b -> true);
 
 		cercaNomeUtente.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -175,7 +178,7 @@ public class AdminController implements Initializable {
 		tabellaUtenti.setItems(sortedData);
 		
 		
-		//Ricerca campi classi
+		// Search class fields
 		FilteredList<Classe> filteredData2 = new FilteredList<>(valori, b -> true);
 
 		cercaClasse.textProperty().addListener((observable, oldValue, newValue) -> {
