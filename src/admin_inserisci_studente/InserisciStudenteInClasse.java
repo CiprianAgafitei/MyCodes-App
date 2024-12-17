@@ -30,6 +30,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/* Insert Student In Class */
 public class InserisciStudenteInClasse implements Initializable {
 
 	@FXML private StackPane rootPane;
@@ -40,7 +41,7 @@ public class InserisciStudenteInClasse implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//Otteniento e inserimento degli studenti nella choicebox
+		// Getting and adding the users in the choicebox
 		ArrayList<Utente> elencoUtenti = IoOperations.getStudenti();
 		ObservableList<String> utenti = FXCollections.observableArrayList();
 				
@@ -51,7 +52,6 @@ public class InserisciStudenteInClasse implements Initializable {
 		}
 		choiceboxStudente.setItems(utenti);
 		
-		//Otteniento e inserimento degli studenti nella choicebox
 		ArrayList<Classe> elencoClassi = IoOperations.getElencoClassi();
 		ObservableList<String> classi = FXCollections.observableArrayList();
 						
@@ -64,6 +64,7 @@ public class InserisciStudenteInClasse implements Initializable {
 	}
 	
 	@FXML
+	/* Back button clicked */
 	public void pulsanteAnnullaCliccato() {
 		try {
 			Parent ritornoPaginaAdmin;
@@ -83,6 +84,7 @@ public class InserisciStudenteInClasse implements Initializable {
 	}
 	
 	@FXML
+	/* Confirm Student Insert Button */
 	public void pulsanteConfermaInserimentoStudente() {
 		if(choiceboxStudente.getValue() == null || choiceboxClasse.getValue() == null) {
 			
@@ -108,7 +110,7 @@ public class InserisciStudenteInClasse implements Initializable {
 			});
 			
 			dialogLayout.setHeading(new Label("Inserimento studente nella classe"));
-			dialogLayout.setBody(new Label("Lo studente selezionato appartiene già ad una classe."));
+			dialogLayout.setBody(new Label("Lo studente selezionato appartiene giÃ  ad una classe."));
 			dialogLayout.setActions(button);
 			dialog.show();
 			dialog.setOnDialogClosed((JFXDialogEvent event) -> {});
