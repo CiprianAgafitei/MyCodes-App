@@ -29,6 +29,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/**
+ * REMOVE USER CLASS
+*/
 public class RimuoviUtente implements Initializable {
 	
 	@FXML private StackPane rootPane;
@@ -38,7 +41,7 @@ public class RimuoviUtente implements Initializable {
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {	
-		//Otteniento e inserimento degli utenti nella choicebox
+		// GET AND INSERT THE USERS IN THE CHOICEBOX
 		ArrayList<Utente> elencoUtenti = IoOperations.getUtenti();
 		ObservableList<String> utenti = FXCollections.observableArrayList();
 		
@@ -51,6 +54,7 @@ public class RimuoviUtente implements Initializable {
 	}
 	
 	@FXML
+	/* BUTTON BACK CLICKED */
 	public void pulsanteAnnullaCliccato() {
 		try {
 			Parent ritornoPaginaAdmin;
@@ -69,8 +73,8 @@ public class RimuoviUtente implements Initializable {
 		}
 	}
 	
-	/**Eliminazione dell'utente per il quale si indica l'username, con controllo che non 
-	 * si stia eliminando un account amministratore.
+	/** Deletion of the user for whom the username is indicated, with control that 
+	 * not deleting an administrator account.
 	 */
 	@FXML
 	public void eliminaUtente() {
@@ -84,7 +88,7 @@ public class RimuoviUtente implements Initializable {
 			});
 			
 			dialogLayout.setHeading(new Label("Rimozione di un account"));
-			dialogLayout.setBody(new Label("Il campo nome utente è vuoto. Si prega di selezionare un utente da rimuovere."));
+			dialogLayout.setBody(new Label("Il campo nome utente Ã¨ vuoto. Si prega di selezionare un utente da rimuovere."));
 			dialogLayout.setActions(button);
 			dialog.show();
 		}
