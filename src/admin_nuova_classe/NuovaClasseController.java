@@ -28,6 +28,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import login.LoginController;
 
+/* New Class Management - Admin Section */
 public class NuovaClasseController implements Initializable {
 
 	@FXML private StackPane rootPane;
@@ -58,10 +59,12 @@ public class NuovaClasseController implements Initializable {
 	}
 	
 	@FXML
+	/* Close add new class window and show back the main admin screen */
 	public void closeThisWindow() {
 		mostraSchermataAdmin();
 	}
-	
+
+	/* Show admin main screen */
 	private void mostraSchermataAdmin() {
 		try {
 			Parent mainScene;
@@ -77,6 +80,7 @@ public class NuovaClasseController implements Initializable {
 	}
 	
 	@FXML
+	/* Create new class method */
 	public void creClasse() {
 		BoxBlur blur = new BoxBlur(3, 3, 3);
 
@@ -99,7 +103,7 @@ public class NuovaClasseController implements Initializable {
 			borderPane.setEffect(blur);
 		}
 		else if(IoOperations.controlloEsistenzaClasseDatoAnnoESezione(choiceboxAnno.getValue() + choiceboxClasse.getValue()).equals("-")){
-			dialogLayout.setHeading(new Label("Attenzione! La classe scelta esiste già."));
+			dialogLayout.setHeading(new Label("Attenzione! La classe scelta esiste giÃ ."));
 			dialogLayout.setActions(button);
 			dialog.show();
 			dialog.setOnDialogClosed((JFXDialogEvent event) -> {
