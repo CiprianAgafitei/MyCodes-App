@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+/* Start App Class */
 public class AvvioApp extends Application {
     
 	private final static String IMAGE_LOCATION = "/resources/icona2.jpg";
