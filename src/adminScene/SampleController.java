@@ -24,12 +24,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
+/**
+ * ADMIN MANAGEMENT SCENE WITH 2 OPTIONS: classes edit option & users edit option
+*/
 public class SampleController implements Initializable {
 	    
     //----ADMIN scene----//
     @FXML private StackPane rootAdmin;
-    @FXML private JFXDrawer drawerUtentiAdmin;	//menu opzioni per tabella utenti
-    @FXML private JFXDrawer drawerClassiAdmin;	//menu opzioni per tabella classi
+    @FXML private JFXDrawer drawerUtentiAdmin;	// OPTIONS MENU FOR USERS TABLE
+    @FXML private JFXDrawer drawerClassiAdmin;	// OPTIONS MENU FOR CLASSES TABLE
     @FXML private TableView<?> tabellaUtenti;
     @FXML private JFXTextField cercaUtenteTextField;
     @FXML private JFXButton cercaUtentiButton;
@@ -38,27 +41,22 @@ public class SampleController implements Initializable {
     @FXML private JFXTextField cercaClasseTextField;
     @FXML private JFXButton cercaClasseButton;
     @FXML private JFXHamburger menuClassiAdmin;
-    @FXML private Tab TabClassi;	//Schermata tabella classi
-    @FXML private Tab TabUtenti;	//Schermata tabella utenti
+    @FXML private Tab TabClassi;	// CLASSES TABLE SCREEN
+    @FXML private Tab TabUtenti;	// USERS TABLE SCREEN
 	
-	/**Change the scene from the login scene to the first access's scene
-	 * @param event
-	 * @throws IOException
-	*/
+	/** Change the scene from the login scene to the first access's scene */
 	public void changeScreenToPrimoAccesso (ActionEvent event) throws IOException {
 	    Parent primoAccesso = FXMLLoader.load(getClass().getResource("Primo_Accesso.fxml"));
 	    Scene scenaPrimoAccesso = new Scene(primoAccesso);
-	    	
-	    //aggiungere controlli textfield username e password
 	    	
 	    Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 	    window.setScene(scenaPrimoAccesso);
 	    window.show();
 	}
 	
-	/**Metodo per INIZIALIZZARE LA SCHERMATA DELL'AMMINISTRATORE e gestire i due menù
-	 * @param url -> valore null perché non usati (Argomento del metodo)
-	 * @param rb  -> valore null perché non usati (Argomento del metodo)
+	/** METHOD TO INITIALIZE THE SCREEN OF THE ADMIN and manage the two menu
+	 * @param url -> null value by default
+	 * @param rb  -> null value by default
 	 */
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
@@ -102,8 +100,7 @@ public class SampleController implements Initializable {
 		}
 	}
 	
-	/**Metoto per l'attivazione del menu con le opzioni sulla tabella utenti
-	 */
+	/** Method for the activation of the menu with the options on the users tabel */
 	public void attivaMenuSuTabUtenti () {
 		HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(menuUtentiAdmin);
 		transition.setRate(-1);
@@ -119,8 +116,7 @@ public class SampleController implements Initializable {
 		});
 	}
 	
-	/**Metodo per l'attivazione del menu con le opzioni sulla tabella classi
-	 */
+	/** METHOD FOR THE ACTIVATION OF THE MENU WITH THE OPTIONS ON THE CLASSES TABLE */
 	public void attivaMenuSuTabClassi () {
 		HamburgerBackArrowBasicTransition transition = new HamburgerBackArrowBasicTransition(menuClassiAdmin);
 		transition.setRate(-1);
