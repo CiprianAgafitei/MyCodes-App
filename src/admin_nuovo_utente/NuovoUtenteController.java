@@ -38,6 +38,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import login.LoginController;
 
+/* New User Management Section - Admin Section */
 public class NuovoUtenteController implements Initializable {
 
 	@FXML private StackPane rootPane;
@@ -49,11 +50,11 @@ public class NuovoUtenteController implements Initializable {
     @FXML private ChoiceBox<Integer> choiceboxTipologia;
     @FXML private JFXButton annullaButton;
     
-    private static String FROM;			//email mittente
-    private static String FROMNAME;		//Nome mittente
-    private static String TO;			//email destinatario
-    private static String SUBJECT;	 	//Oggetto della mail
-    private static String BODY;			//Corpo della mail 
+    private static String FROM;			// sender mail
+    private static String FROMNAME;		// sender name
+    private static String TO;			// receiver mail
+    private static String SUBJECT;	 	// mail subject
+    private static String BODY;			// mail text 
 	
     private static final String SMTP_USERNAME = "gestione.mycode.app@gmail.com";	// Replace smtp_username with your SES SMTP username.
     private static final String SMTP_PASSWORD = "My#Code27&11";	// Replace smtp_password with your SES SMTP password.
@@ -70,8 +71,7 @@ public class NuovoUtenteController implements Initializable {
 		mostraSchermataAdmin();
 	}
 	
-	/**METODO PER TORNARE ALLA SCHERMATA INIZIALE DELL'AMMINISTRATORE
-	 */
+	/** METHOD TO GO BACK TO ADMIN MAIN WINDOW */
 	private void mostraSchermataAdmin() {
 		try {
 			Parent mainScene;
@@ -87,6 +87,7 @@ public class NuovoUtenteController implements Initializable {
 	}
 	
 	@FXML
+	/* Load account creation method */
 	public void loadCreazioneAccount() {
 		BoxBlur blur = new BoxBlur(3, 3, 3);
 
@@ -98,7 +99,7 @@ public class NuovoUtenteController implements Initializable {
 			dialog.close();
 		});
 		
-		//Campi vuoti
+		// Emplty fields
 		if(textfieldNome.getText() == null || textfieldNome.getText().length() == 0 ||
 				textfieldCognome.getText() == null || textfieldCognome.getText().length() == 0 ||
 						textfieldEmail.getText() == null || textfieldEmail.getText().length() == 0 ||
@@ -112,10 +113,10 @@ public class NuovoUtenteController implements Initializable {
 			});
 			borderPane.setEffect(blur);
 		}
-		//Controllo correttezza sintassi email
+		// Mail Syntax Check
 		else if(!validateMail(textfieldEmail.getText())) {
 			
-			dialogLayout.setHeading(new Label("Attenzione! La sintassi della email non è corretta."));
+			dialogLayout.setHeading(new Label("Attenzione! La sintassi della email non Ã¨ corretta."));
 			dialogLayout.setActions(button);
 			dialog.show();
 			dialog.setOnDialogClosed((JFXDialogEvent event) -> {
@@ -126,7 +127,7 @@ public class NuovoUtenteController implements Initializable {
 			try {
 				String[]risposta = IoOperations.createAccount(textfieldNome.getText().toLowerCase(), textfieldCognome.getText().toLowerCase(), choiceboxTipologia.getValue(), textfieldEmail.getText().toLowerCase());
 				
-				//Controllo se la creazione è andata a buon fine
+				// Check if the creation was done correctly
 				sendConfirmEmailRegistration (risposta[1]);
 				mostraSchermataAdmin();
 			} catch (UnsupportedEncodingException e) {
@@ -137,10 +138,6 @@ public class NuovoUtenteController implements Initializable {
 		}
 	}
 	
-	/**INVIO DELLA EMAIL DI RICHIESTA PER LA REGISTRAZIONE AL SISTEMA
-	 * @throws MessagingException
-	 * @throws UnsupportedEncodingException
-	 */
 	private void sendConfirmEmailRegistration(String username) throws MessagingException, UnsupportedEncodingException {
 		// Create a Properties object to contain connection configuration information.
     	Properties props = System.getProperties();
@@ -153,13 +150,13 @@ public class NuovoUtenteController implements Initializable {
     	Session session = Session.getDefaultInstance(props);        
         Transport transport = session.getTransport();	 // Create a transport
         
-        //Preparazione dati per l'invio della richiesta
+        // Data preparation for the sending of the mail
 		TO = textfieldEmail.getText();
 		FROM = "gestione.mycode.app@gmail.com";
 		FROMNAME = "Registrazione MyCodes";
 		SUBJECT = "Conferma di avvenuta registrazione al sistema di " + textfieldEmail.getText();
-		BODY = "La registrazione da lei richiesta è avvenuta con successo!\n\n"
-				+ "Il suo username è: " + username + "\n\nPer terminare la registrazione, al prossimo accesso:\n  - selezionare"
+		BODY = "La registrazione da lei richiesta Ã¨ avvenuta con successo!\n\n"
+				+ "Il suo username Ã¨: " + username + "\n\nPer terminare la registrazione, al prossimo accesso:\n  - selezionare"
 						+ " la voce \"Primo accesso\"\n  - inserire una password\n  - accedere al sistema";
 		
 		MimeMessage msg = new MimeMessage(session);
@@ -170,10 +167,10 @@ public class NuovoUtenteController implements Initializable {
    
 		
 		try{
-			//Connessione al SES tramite username e password SMTP sopra specificate 
+			// Connection to the SES with username and password SMTP 
             transport.connect(HOST, SMTP_USERNAME, SMTP_PASSWORD);
             
-            // Invio della email.
+            // SEN OF THE MAIL
             transport.sendMessage(msg, msg.getAllRecipients());
                         
             System.out.println("Email spedita");
@@ -183,17 +180,13 @@ public class NuovoUtenteController implements Initializable {
 		}
 		catch (Exception ex) {
 			System.out.println("Errore nell'invio dell'email. Si prega di riprovare.");
-			System.out.println("Messaggio d'errore: " + ex.getMessage() + "\nSe l'errore persiste provare più tardi.");
+			System.out.println("Messaggio d'errore: " + ex.getMessage() + "\nSe l'errore persiste provare piÃ¹ tardi.");
 		}
 		finally {
 			transport.close(); // Close and terminate the connection.
 		}
 	}
 	
-	/** VERIFICA DELLA VALIDITA' DIN UN INDIRIZZO EMAIL
-     * @param email è l'email da verificare
-     * @return true se lindirizzo email è corretto; false se non corretto.
-     */
 	 public boolean validateMail(String mail){
 		if (mail == null) {
 			return false;
@@ -202,7 +195,7 @@ public class NuovoUtenteController implements Initializable {
 		Matcher m = p.matcher(mail);
 		boolean matchFound = m.matches();
 
-		// Condizioni più restrittive rispetto alle precedenti
+		// More strictly conditions
 		String expressionPlus = "^[\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
 		Pattern pPlus = Pattern.compile(expressionPlus, Pattern.CASE_INSENSITIVE);
 		Matcher mPlus = pPlus.matcher(mail);
