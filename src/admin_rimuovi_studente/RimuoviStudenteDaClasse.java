@@ -29,6 +29,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/* Remove Student From Class */
 public class RimuoviStudenteDaClasse implements Initializable {
 
 	@FXML private StackPane rootPane;
@@ -38,7 +39,6 @@ public class RimuoviStudenteDaClasse implements Initializable {
     
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		//Otteniento e inserimento degli studenti nella choicebox
 		ArrayList<Utente> elencoUtenti = IoOperations.getStudenti();
 		ObservableList<String> utenti = FXCollections.observableArrayList();
 						
@@ -51,6 +51,7 @@ public class RimuoviStudenteDaClasse implements Initializable {
 	}
 	
 	@FXML
+	/* Back button Clicked */
 	public void pulsanteAnnullaCliccato() {
 		try {
 			Parent rimuoviStudenteDaClasseScene;
@@ -70,6 +71,7 @@ public class RimuoviStudenteDaClasse implements Initializable {
 	}
 	
 	@FXML
+	/* Confirm Student Remove Button */
 	public void pulsanteConfermaRimozioneStudente() {
 		if(choiceboxUtente.getValue() == null) {
 			
