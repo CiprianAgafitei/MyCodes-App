@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti.DocentiController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <TabPane prefHeight="400.0" prefWidth="567.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+               <tabs>
+                  <Tab text="Visualizza Verifiche Assegnate">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="576.0">
+                           <children>
+                              <TableView fx:id="tabellaVerificheAssegnate" layoutX="27.0" layoutY="14.0" prefHeight="290.0" prefWidth="490.0">
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <columns>
+                                    <TableColumn prefWidth="298.0" text="Materia - Argomento" />
+                                    <TableColumn prefWidth="69.0" text="Classe" />
+                                    <TableColumn prefWidth="126.0" text="Scadenza" />
+                                 </columns>
+                              </TableView>
+                              <Label layoutX="111.0" layoutY="330.0" text="Cerca:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="textfieldCercaVerificaAssegnata" labelFloat="true" layoutX="160.0" layoutY="329.0" promptText="Materia - Argomento">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXButton fx:id="cercaVerificaAssegnataButton" buttonType="RAISED" layoutX="303.0" layoutY="327.0" text="Cerca">
+                                 <font>
+                                    <Font name="Verdana" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="visualizzaButton" layoutX="370.0" layoutY="327.0" text="Visualizza">
+                                 <font>
+                                    <Font name="Verdana" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXHamburger fx:id="menuVisualizzaVerifiche" layoutX="556.0" layoutY="14.0" />
+                              <JFXDrawer fx:id="tendinaVerificheAssegnate" direction="RIGHT" layoutX="441.0" prefHeight="370.0" prefWidth="160.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
