@@ -19,31 +19,37 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Admin Menu Layers
+*/
 public class TendineMenuAdmin implements Initializable {
 	
-	//Tendina operazione su classe
+	// Operation layer for class management
     @FXML private VBox vboxClasse;
-	@FXML private JFXButton nuovaClasseButton;
-    @FXML private JFXButton inserisciStudenteButton;
-    @FXML private JFXButton rimuoviStudenteButton;
-    @FXML private JFXButton modificaClasseButton;
+	@FXML private JFXButton nuovaClasseButton;	// newClassButton
+    @FXML private JFXButton inserisciStudenteButton;	// insertStudentButton
+    @FXML private JFXButton rimuoviStudenteButton;	// removeStudentButton
+    @FXML private JFXButton modificaClasseButton;	// EditClassButton
 	
-	//Tendina operazione su utente
+	// Operation layer for user management
 	@FXML private VBox vboxUtenti;
-    @FXML private JFXButton nuovoUtenteButton;
-    @FXML private JFXButton eliminaUtenteButton;
-    @FXML private JFXButton modificaUtenteButton;
+    @FXML private JFXButton nuovoUtenteButton;		// newUserButton
+    @FXML private JFXButton eliminaUtenteButton;	// deleteUserButton
+    @FXML private JFXButton modificaUtenteButton;	// editUserButton
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 	}
 	
 	@FXML 
+	/**
+	 *  Create class method
+ 	*/
 	public void creaClasse(ActionEvent event) {
 		loadSchermataAggiuntaClasse();
 	}
 	
-	/** METODO PER CARICARE LA SCHERMATA DI CREAZIONE DELLA PAGINA DI AGGIUNTA DI UNA CLASSE
+	/** METHOD TO LOAD THE SCREEN TO CREATE THE PAGE FOR ADDING A CLASS
 	 */
 	private void loadSchermataAggiuntaClasse() {
 		try {
@@ -65,6 +71,7 @@ public class TendineMenuAdmin implements Initializable {
 	}
 	
 	@FXML
+	/** Add new student method */
 	public void inserisciStudente(ActionEvent event) {
 		try {
 			Parent ritornoPaginaAdmin;
@@ -84,6 +91,7 @@ public class TendineMenuAdmin implements Initializable {
 	}
 	
 	@FXML
+	/** Remove Student Method  **/
 	public void rimuoviStudente(ActionEvent event) {
 		try {
 			Parent ritornoPaginaAdmin;
@@ -101,17 +109,18 @@ public class TendineMenuAdmin implements Initializable {
 			Logger.getLogger(TendineMenuAdmin.class.getName()).log(Level.SEVERE, null, e);
 		}
 	}
-	
+
+	/* Edit class method */
 	public void modificaClasse(ActionEvent event) {
 		
 	}
-	
+
+	/* Create user method */
 	public void creaUtente(ActionEvent event) {
 		loadSchermataCreazioneUtente();
 	}
 	
-	/** METODO PER CARICARE LA SCHERMATA DI CREAZIONE DELL'UTENTE
-	 */
+	/** METHOD TO LOAD THE SCREEN FOR THE CREATION OF THE NEW USER */
 	private void loadSchermataCreazioneUtente() {
 		try {
 			Parent creazioneUtenteScene;
@@ -132,12 +141,12 @@ public class TendineMenuAdmin implements Initializable {
 	}
 	
 	@FXML
+	/* REMOVE USER */
 	public void rimuoviUtente(ActionEvent event) {
 		loadSchermataRimuoviUtente();
 	}
 	
-	/** METODO PER MOSTRARE LA SCHERMATA DI RIMOZIONE DI UN UTENTE
-	 */
+	/** METHOD TO SHOW THE SCREEN TO REMOVE THE USER */
 	private void loadSchermataRimuoviUtente() {
 		try {
 			Parent rimuoviUtenteScene;
@@ -158,12 +167,12 @@ public class TendineMenuAdmin implements Initializable {
 	}
 	
 	@FXML
+	/* Edit User method */
 	public void modificaUtente(ActionEvent event) {
 		loadSchermataModificaUtente();
 	}
 	
-	/** METODO PER MOSTRARE LA SCHERMATA DI MODIFICA DELLA PASSWORD DI UN UTENTE
-	 */
+	/** METHOD TO LOAD THE SCREEN TO ALLOW EDIT OF THE PASSOWRD OF A USER */
 	private void loadSchermataModificaUtente() {
 		try {
 			Parent modificaUtenteScene;
