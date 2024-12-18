@@ -7,13 +7,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-/**Classe per gestire le quattro opzioni del menu laterale che l'amministratore può eseguire
- * nella propria schermata, ovvero:
+/**
+ * CLASS TO MANAGE THE 4 OPTIONS FROM LATERAL MENU THAT THE ADMIN CAN DO IN HIS SCREEN:
  * 
- * - b1: nuova classe
- * - b2: inserisci studente
- * - b3: rimuovi studente
- * - b4: modifica classe
+ * - b1: new class
+ * - b2: add student
+ * - b3: remove student
+ * - b4: edit a class
  * 
  * @author Ciprian
  *
