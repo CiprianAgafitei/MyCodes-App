@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootPane" prefHeight="321.0" prefWidth="351.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.MenuOpzioniControllerClassi">
+   <children>
+      <HBox alignment="CENTER" prefHeight="281.0" prefWidth="353.0">
+         <children>
+            <GridPane prefHeight="281.0" prefWidth="303.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="9.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <JFXButton fx:id="nuovaClasse" buttonType="RAISED" focusTraversable="false" onAction="#nuovaClasse" prefHeight="130.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text=".">
+                     <tooltip>
+                        <Tooltip text="Nuova classe" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="55" wrappingWidth="45.14285659790039" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="inserisciStudente" buttonType="RAISED" focusTraversable="false" onAction="#inserisciStudenteInClasse" prefHeight="129.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2">
+                     <tooltip>
+                        <Tooltip text="Inserisci studente in classe" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER_PLUS" size="5em" wrappingWidth="50.57142639160156" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="rimuoviStudente" buttonType="RAISED" focusTraversable="false" onAction="#rimuoviStudenteDaClasse" prefHeight="143.0" prefWidth="159.0" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip text="Rimuovi studente dalla classe" />
+                        <font>
+                              <Font size="13.0" />
+                        </font>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER_TIMES" size="5em" wrappingWidth="58.57142639160156" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="aggiornamentoClassi" buttonType="RAISED" focusTraversable="false" onAction="#aggiornaClassi" prefHeight="150.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip text="Aggiornamento classi" />
+                        <font>
+                              <Font size="13.0" />
+                        </font>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="COGS" size="5em" wrappingWidth="52.28571319580078" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

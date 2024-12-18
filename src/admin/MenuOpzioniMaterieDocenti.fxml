@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootPane" prefHeight="321.0" prefWidth="351.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.MenuOpzioniControllerMaterieDocenti">
+   <children>
+      <HBox alignment="CENTER" prefHeight="281.0" prefWidth="353.0">
+         <children>
+            <GridPane prefHeight="281.0" prefWidth="303.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="9.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <JFXButton fx:id="nuovaMateria" buttonType="RAISED" focusTraversable="false" onAction="#nuovaMateria" prefHeight="130.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text=".">
+                     <tooltip>
+                        <Tooltip text="Nuova materia" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS_SQUARE" size="60" wrappingWidth="44.14285659790039" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="assegnazioneMateria" buttonType="RAISED" focusTraversable="false" onAction="#assegnaMateriaDocente" prefHeight="129.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2">
+                     <tooltip>
+                        <Tooltip text="Assegnazione docente" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" selectionEnd="0" size="60" wrappingWidth="48.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="rimuoviAssegnazione" buttonType="RAISED" focusTraversable="false" onAction="#rimuoviAssegnazioneMateriaDocente" prefHeight="143.0" prefWidth="159.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.rowIndex="2">
+                     <tooltip>
+                        <Tooltip text="Rimuovi assegnazione">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="BAN" size="60" wrappingWidth="44.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="stampaAssegnazioni" buttonType="RAISED" focusTraversable="false" onAction="#stampaElencoDocentiMaterie" prefHeight="150.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="CLOUD_DOWNLOAD" size="60" wrappingWidth="53.57143020629883" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Scarica assegnazioni" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Tooltip>
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

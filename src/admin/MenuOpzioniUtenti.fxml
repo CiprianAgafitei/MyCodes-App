@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<!--<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIcon?>  -->
+
+<VBox fx:id="rootPane" prefHeight="321.0" prefWidth="351.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.MenuOpzioniControllerUtenti">
+   <children>
+      <HBox alignment="CENTER" prefHeight="281.0" prefWidth="353.0">
+         <children>
+            <GridPane prefHeight="281.0" prefWidth="303.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="9.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <JFXButton fx:id="nuovoUtente" buttonType="RAISED" focusTraversable="false" onAction="#nuovoUtente" prefHeight="130.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text=".">
+                     <tooltip>
+                        <Tooltip text="Nuovo utente" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER_PLUS" size="55" wrappingWidth="45.14285659790039" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="caricaListaUtenti" buttonType="RAISED" focusTraversable="false" onAction="#caricaElencoUtenti" prefHeight="129.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="UPLOAD" size="55" wrappingWidth="35.0" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Inserisci Utenti da file" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="aggiornamentoUtente" buttonType="RAISED" focusTraversable="false" onAction="#resetPassword" prefHeight="143.0" prefWidth="159.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.rowIndex="2">
+                     <graphic>
+                        <!--<MaterialDesignIcon fill="WHITE" glyphName="ACCOUNT_CONVERT" size="60" wrappingWidth="46.0" />  -->
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Aggiornamento utente" wrapText="true">
+	                        <font>
+	                        	<Font size="13.0" />
+	                        </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="5em" wrappingWidth="46.57142639160156" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="downloadButton" buttonType="RAISED" focusTraversable="false" onAction="#stampaElencoStudenti" prefHeight="150.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <graphic>
+                        <!--<MaterialDesignIcon fill="WHITE" glyphName="DOWNLOAD" size="60" wrappingWidth="48.0" />  -->
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Scarica elenco studenti per classe" wrapText="true">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="DOWNLOAD" size="5em" wrappingWidth="42.71428680419922" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
