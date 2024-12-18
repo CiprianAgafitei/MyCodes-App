@@ -33,8 +33,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-/**Classe per la gestione della schermata del login con gli appositi metodi
- * per il ontrollo dell'esistenza degli utenti e di selezione dei vari campi
+/** 
+ * CLASS FOR THE LOGIN MANAGEMENT SCREEN with the relative methods
+ * to check the existence of users and the selection of the relative fields
  * 
  * @author Ciprian
  *
@@ -49,7 +50,7 @@ public class LoginController implements Initializable {
 	@FXML private Label accediLabelLogin;
 	@FXML private JFXTextField usernameLogin;
 	@FXML private JFXPasswordField passwordLogin;
-	@FXML private Hyperlink primoAccessoLabelLogin;	//Se cliccato, inizializzazione della scena di primo accesso
+	@FXML private Hyperlink primoAccessoLabelLogin;	// If clicked -> initializationof the first access screen
 	@FXML private Label newAccountLabelLogin;
 	@FXML private Hyperlink registerLabelLogin;
 	@FXML private JFXButton avantiButtonLogin;
@@ -64,8 +65,7 @@ public class LoginController implements Initializable {
 		mostraPrimoAccesso();
 	}
 	
-	/** METODO PER PREPARARE LA TRANSIZIONE SULLA SCHERMATA DI PRIMO ACCESSO
-	 */
+	/** METHOD TO PREPARE THE TRANSITION TO THE FIRST ACCESS SCREEN */
 	private void mostraPrimoAccesso() {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
@@ -79,8 +79,7 @@ public class LoginController implements Initializable {
 		fadeTransition.play();
 	}
 	
-	/** METODO PER CARICARE LA SCHERMATA DI PRIMO ACCESSO
-	 */
+	/** METHOD TO LOAD THE SCREEN OF NEW ACCESS */
 	private void loadPrimoAccesso() {
 		try {
 			Parent primoAccessoScene;
@@ -101,8 +100,7 @@ public class LoginController implements Initializable {
 		mostraRegistrazione();
 	}
 	
-	/** METODO PER EFFETTUARE LA TRANSIZIONE DELLA SCHERMATA SU QUELLA DELLA REGISTRAZIONE
-	 */
+	/** METHOD TO MAKE THE TRANSITION OF THE SCREEN TO THE ONE ABOUT THE REGISTRATION */
 	private void mostraRegistrazione() {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
@@ -117,8 +115,7 @@ public class LoginController implements Initializable {
 		fadeTransition.play();
 	}
 	
-	/** METDOD PER CARICARE LA SCHERMATA DELLA REGISTRAZIONE
-	 */
+	/** METHOD TO LOAD THE REGISTRATION SCREEN */
 	private void loadRegistrazione() {
 		try {
 			Parent registrazioneScene;
@@ -134,8 +131,7 @@ public class LoginController implements Initializable {
 		}
 	}
 	
-	/**	METODO PER GESTIRE LA PRESSIONE DEL PULSANTE ACCEDI CON CONTROLLO DEI CAMPI
-	 */
+	/** METHOD TO MANAGE THE CLICK ON LOGIN BUTTON AND THE FIELDS CHECK */
 	public void tryToLogIn() {	
 		BoxBlur blur = new BoxBlur(3, 3, 3);
 		
@@ -146,7 +142,8 @@ public class LoginController implements Initializable {
 		button.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseEvent) -> {
 			dialog.close();
 		});
-		
+
+		// Username and Password fields check
 		if(usernameLogin.getText() == null || usernameLogin.getText().length() == 0 ||
 				passwordLogin.getText() == null || passwordLogin.getText().length() == 0 ) {
 				
@@ -162,26 +159,26 @@ public class LoginController implements Initializable {
 		}
 	}
 	
-	/** METODO PER LA CONNESSIONE AL DATABASE E CONTROLLO ESISTENZA UTENTE
-	 */
+	/** METHOD FOR THE CONNECTION TO THE DATABASE AND TO CHECK USER EXISTENCE */
 	private void tryToConnect() {
 		if(IoOperations.login(usernameLogin.getText().toLowerCase(), passwordLogin.getText())){
-			//Utente esiste -> identificazione della tipologia utente
+			// The user exists -> identification of the user type
 			int tipologia_utente = IoOperations.getTipologiaUtente(usernameLogin.getText().toLowerCase());
 						
-			//Admin -> schermata gestione classi/utenti
+			// Admin -> classes/users screen
 			if(tipologia_utente == 1) {
 				mostraAdminScene();
 			}
-			//Docenti -> schermata creazione/visualizzazione verifiche
+			// Teachers -> Test creation/vizualization scren
 			else if(tipologia_utente == 2) {
 				mostraDocentiScene();
 			}
-			//Studenti -> schermata esecuzione/visualizzazione verifiche
+			// Students -> Test visualization/execution screen
 			else {
 				mostraStudentiScene();
 			}
 		}else {
+			// User not found section code
 			BoxBlur blur = new BoxBlur(3, 3, 3);
 			
 			JFXDialogLayout dialogLayout = new JFXDialogLayout();
@@ -202,8 +199,7 @@ public class LoginController implements Initializable {
 		}
 	}
 	
-	/** METODO PER PREPARARE LA TRANSIZIONE SULLA SCHERMATA DELL'AMMINISTRATORE
-	 */
+	/** METOHOD TO PREPARE THE TRANSITION TO ADMIN SCENE */
 	public void mostraAdminScene() {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
@@ -217,8 +213,7 @@ public class LoginController implements Initializable {
 		fadeTransition.play();
 	}
 	
-	/** METODO PER CARICARE LA SCHERMATA DELL'AMMINISTRATORE
-	 */
+	/** METHOD TO LOAD THE ADMIN SCENE */
 	private void loadAdminScene() {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/admin/admin.fxml"));
@@ -231,8 +226,7 @@ public class LoginController implements Initializable {
 		}
 	}
 	
-	/** METODO PER PREPARARE LA TRANSIZIONE SULLA SCHERMATA DEL DOCENTE
-	 */
+	/** METOHOD TO PREPARE THE TRANSITION TO TEACHER SCENE */
 	public void mostraDocentiScene() {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
@@ -246,8 +240,7 @@ public class LoginController implements Initializable {
 		fadeTransition.play();
 	}
 	
-	/** METODO PER CARICARE LA SCHERMATA DEL DOCENTE
-	 */
+	/** METHOD TO LOAD THE TEACHER SCENE */
 	private void loadDocentiScene() {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/docenti/docenti.fxml"));
@@ -260,8 +253,7 @@ public class LoginController implements Initializable {
 		}
 	}
 	
-	/** METODO PER PREPARARE LA TRANSIZIONE SULLA SCHERMATA DEGLI STUDENTI
-	 */
+	/**METOHOD TO PREPARE THE TRANSITION TO STUDENT SCENE */
 	public void mostraStudentiScene() {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
@@ -275,8 +267,7 @@ public class LoginController implements Initializable {
 		fadeTransition.play();
 	}
 	
-	/** METODO PER CARICARE LA SCHERMATA DEGLI STUDENTI
-	 */
+	/** METHOD TO LOAD THE STUDENT SCENE */
 	private void loadStudentiScene() {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/studenti/studenti.fxml"));
