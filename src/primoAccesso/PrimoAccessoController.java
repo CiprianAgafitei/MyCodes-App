@@ -29,8 +29,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import login.LoginController;
 
-/**Classe per la gestione della schermata di primo accesso con metodi per
- * il controllo dell'esistenza dell'username inserito
+/**
+ * CLASS TO MANAGE THE FIRST ACCESS SCREEN WITH METHODS TO CHECK IF A USERNAME ALREADY EXISTS
  * 
  * @author Ciprian
  *
@@ -53,7 +53,8 @@ public class PrimoAccessoController implements Initializable {
 	public void changeSceneToLogin(ActionEvent event) {
 		mostraLogin();
 	}
-	
+
+	/* Show Login screen */
 	private void mostraLogin() {
 		FadeTransition fadeTransition = new FadeTransition();
 		fadeTransition.setDuration(Duration.millis(1000));
@@ -66,7 +67,8 @@ public class PrimoAccessoController implements Initializable {
 		});
 		fadeTransition.play();
 	}
-	
+
+	/* Load login scene */
 	private void loadMainView() {
 		try {
 			Parent mainScene;
@@ -80,11 +82,16 @@ public class PrimoAccessoController implements Initializable {
 			Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, e);
 		}
 	}
-	
+
+	/* Check conditions to finalize the registration */
 	public void finishRegistration() {
 		controllNotEmptyTextFields();
 	}
-	
+
+	/* Check not empty fields
+ 	 * User field -> not empty & is the one given by the admin
+   	 * Password field -> not empty & length: > 5 & < 10
+   	*/
 	private void controllNotEmptyTextFields() {
 		BoxBlur blur = new BoxBlur(3, 3, 3);
 		
@@ -95,7 +102,8 @@ public class PrimoAccessoController implements Initializable {
 		button.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent mouseEvent) -> {
 			dialog.close();
 		});
-		
+
+		// Check not empty fields of user name and password
 		if(nomeUtentePrimoAccesso.getText() == null || nomeUtentePrimoAccesso.getText().length() == 0 ||
 				nuovaPasswordPrimoAccesso.getText() == null || nuovaPasswordPrimoAccesso.getText().length() == 0) {
 			
@@ -107,6 +115,7 @@ public class PrimoAccessoController implements Initializable {
 			});
 			anchorPane.setEffect(blur);
 		}
+		// Check password length
 		else if(nuovaPasswordPrimoAccesso.getText().length() < 5 || nuovaPasswordPrimoAccesso.getText().length() > 10) {
 			
 			dialogLayout.setHeading(new Label("Attenzione! La password deve essere\n di lunghezza compresa tra 5 e 10"));
@@ -117,6 +126,7 @@ public class PrimoAccessoController implements Initializable {
 			});
 			anchorPane.setEffect(blur);
 		}
+		// Username not recognized
 		else if(!IoOperations.controlloEsistenzaUsername(nomeUtentePrimoAccesso.getText().toLowerCase())) {
 			
 			dialogLayout.setHeading(new Label("Username non riconosciuto. Controllare che sia quello fornito dall'amministratore."));
@@ -128,7 +138,8 @@ public class PrimoAccessoController implements Initializable {
 			anchorPane.setEffect(blur);
 		}
 		else {
-			//Accesso su schermata dell'utente della tipologia rispettiva
+			// Load the user page by its tipology
+			
 		}
 	}
 	
