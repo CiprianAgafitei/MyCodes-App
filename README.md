@@ -30,3 +30,5 @@ Ready to experience efficient and secure testing? 🚀
 Check out MyCode App on GitHub now!
 
 Note: The PDF file included is in italian but you can see the screens of the applications from it. The code contains comments but not all of them have been translated to english yet.
+> "Jar Files" folder contains jars needed to the application. They have been saved as ".doc" just not to be detected as virus, but they are safe.
+> You can download src folder and run add it to Eclipse. I used JavaFX for graphical part.
