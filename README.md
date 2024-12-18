@@ -5,7 +5,7 @@ Welcome to MyCode App, a desktop application built with Java and JavaFX to simpl
 🧑‍🏫 Student & Class Management
 - 📋 Create, Edit, Delete Students — Each student has a unique ID for easy tracking.
 - 🏫 Class Organization — Students are assigned to a single class only. Teachers can manage multiple classes at once.
-- 📂 Class Operations — Add, modify, or delete classes with full control.
+- 📂 Class Operations — Add, modify, or delete classes with full control. Update option included to promote students at the end of each year!
 
 📝 Test Creation & Administration
 - 🆕 Create Custom Tests — Teachers can build new tests for one or more classes.
@@ -16,7 +16,7 @@ Welcome to MyCode App, a desktop application built with Java and JavaFX to simpl
 - ❌ Negative Scoring — Apply penalties for incorrect answers to increase challenge and fairness.
 
 🔐 Security & Authentication
-- 🔑 Secure Login — Access requires a username and password.
+- 🔑 Secure Login — Access requires a username and password. The username is given by the administrator.
 - 🛡️ Password Protection — Passwords are encrypted for enhanced security.
 - 📧 Email Verification — Account verification is done via a linked email.
 
@@ -28,3 +28,5 @@ With MyCode App, teachers can save time, manage classes more efficiently, and pr
 
 Ready to experience efficient and secure testing? 🚀
 Check out MyCode App on GitHub now!
+
+Note: The PDF file included is in italian but you can see the screens of the applications from it. The code contains comments but not all of them have been translated to english yet.
