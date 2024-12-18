@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti.ImpostazioniDocentiController">
+   <children>
+      <BorderPane fx:id="borderPane" prefHeight="430.0" prefWidth="440.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="76.0" prefWidth="562.0" style="-fx-background-color: red;">
+                     <children>
+                        <JFXButton fx:id="indietroButton" focusTraversable="false" onAction="#pulsanteTornaIndietro" style="-fx-text-fill: transparent;" text=".">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="25" wrappingWidth="13.428571701049805" />
+                           </graphic>
+                           <HBox.margin>
+                              <Insets left="20.0" right="170.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="Indietro" />
+                           </tooltip>
+                        </JFXButton>
+                        <Label text="Area riservata" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="278.0" prefWidth="562.0" style="-fx-background-color: #fff;" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="562.0">
+                                 <VBox.margin>
+                                    <Insets top="50.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <JFXTextField fx:id="nome" editable="false" focusTraversable="false" labelFloat="true" promptText="Nome">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets top="50.0" />
+                                 </opaqueInsets>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <JFXTextField fx:id="cognome" editable="false" focusTraversable="false" labelFloat="true" promptText="Cognome">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <JFXTextField fx:id="username" editable="false" focusTraversable="false" labelFloat="true" promptText="Username">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <JFXTextField fx:id="email" editable="false" focusTraversable="false" labelFloat="true" promptText="Email">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <Hyperlink fx:id="cambiaPassword" focusTraversable="false" text="Cambia password">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Hyperlink>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="30.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

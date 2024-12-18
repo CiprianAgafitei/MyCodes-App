@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="rootPane" prefHeight="321.0" prefWidth="351.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti_verifiche.MenuOpzioniController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="281.0" prefWidth="353.0">
+         <children>
+            <GridPane prefHeight="281.0" prefWidth="303.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="9.0" prefWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="140.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <JFXButton fx:id="nuovaDomanda" buttonType="RAISED" focusTraversable="false" onAction="#nuovaDomandaClicked" prefHeight="130.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text=".">
+                     <graphic>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Nuova domanda" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PLUS_SQUARE" size="4.5em" wrappingWidth="35.14285659790039" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="nuovaVerifica" buttonType="RAISED" focusTraversable="false" onAction="#nuovaVerificaClicked" prefHeight="129.0" prefWidth="140.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="55" wrappingWidth="35.0" />
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Nuova verifica" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                  </JFXButton>
+                  <JFXButton fx:id="modificaVerifica" buttonType="RAISED" focusTraversable="false" onAction="#modificaCliccato" prefHeight="143.0" prefWidth="159.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.rowIndex="2">
+                     <graphic>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Modifica verifica">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="WRENCH" size="4.5em" wrappingWidth="39.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="scaricaVerifica" buttonType="RAISED" focusTraversable="false" onAction="#stampaVerifica" prefHeight="150.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <graphic>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip text="Scarica verifica">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Tooltip>
+                     </tooltip>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="PRINT" size="4.5em" wrappingWidth="39.14285659790039" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </GridPane>
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

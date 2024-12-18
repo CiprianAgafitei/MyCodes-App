@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="650.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti_nuova_domanda.NuovaDomanda">
+   <children>
+      <VBox fx:id="vbox" alignment="TOP_CENTER" maxHeight="520.0" maxWidth="651.0" minHeight="520.0" minWidth="611.0" prefHeight="520.0" prefWidth="651.0" StackPane.alignment="TOP_LEFT">
+         <children>
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="650.0">
+               <children>
+                  <Label text="Materia della nuova domanda:">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="choiceMateria" prefHeight="25.0" prefWidth="154.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="42.0" prefWidth="650.0">
+               <children>
+                  <JFXTextField fx:id="testoDomanda" labelFloat="true" prefHeight="31.0" prefWidth="400.0" promptText="Testo della domanda">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="caricaImmagine" buttonType="RAISED" onAction="#caricaImmagineDomanda" ripplerFill="#ffb500" style="-fx-background-color: #ffb500; -fx-text-fill: #fff;" text="Carica">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="UPLOAD" size="20" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Carica immagine" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <ScrollPane prefHeight="327.0" prefWidth="610.0">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox fx:id="hbox1" alignment="CENTER_LEFT" maxHeight="55.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0" prefHeight="55.0" prefWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r1" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta1">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin></JFXTextField>
+                              <JFXCheckBox fx:id="check1" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice1" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica1" onAction="#caricaImmagineRisposta1" prefHeight="29.0" prefWidth="39.0" style="-fx-text-fill: transparent;">
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="7.571428298950195" />
+                                 </graphic>
+                              </JFXButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="hbox2" alignment="CENTER_LEFT" maxHeight="45.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r2" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta2">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin></JFXTextField>
+                              <JFXCheckBox fx:id="check2" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice2" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica2" onAction="#caricaImmagineRisposta2" prefHeight="29.0" prefWidth="20.0" style="-fx-text-fill: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="7.571428298950195" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="hbox3" alignment="CENTER_LEFT" maxHeight="45.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r3" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta3">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin></JFXTextField>
+                              <JFXCheckBox fx:id="check3" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice3" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica3" onAction="#caricaImmagineRisposta3" prefHeight="29.0" prefWidth="20.0" style="-fx-text-fill: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="6.571428298950195" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="hbox4" alignment="CENTER_LEFT" maxHeight="45.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r4" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta4">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin></JFXTextField>
+                              <JFXCheckBox fx:id="check4" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice4" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica4" onAction="#caricaImmagineRisposta4" prefHeight="29.0" prefWidth="20.0" style="-fx-text-fill: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="6.571428298950195" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="hbox5" alignment="CENTER_LEFT" maxHeight="45.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r5" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta5">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin></JFXTextField>
+                              <JFXCheckBox fx:id="check5" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice5" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica5" onAction="#caricaImmagineRisposta5" prefHeight="29.0" prefWidth="20.0" style="-fx-text-fill: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="5.571428298950195" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="hbox6" alignment="CENTER_LEFT" maxHeight="45.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r6" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta6">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin></JFXTextField>
+                              <JFXCheckBox fx:id="check6" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice6" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica6" onAction="#caricaImmagineRisposta6" prefHeight="29.0" prefWidth="20.0" style="-fx-text-fill: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="6.571428298950195" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="hbox7" alignment="CENTER_LEFT" maxHeight="45.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r7" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta7">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin></JFXTextField>
+                              <JFXCheckBox fx:id="check7" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice7" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica7" onAction="#caricaImmagineRisposta7" prefHeight="29.0" prefWidth="20.0" style="-fx-text-fill: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="6.571428298950195" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="hbox8" alignment="CENTER_LEFT" maxHeight="45.0" maxWidth="611.0" minHeight="45.0" minWidth="611.0">
+                           <children>
+                              <JFXTextField fx:id="r8" labelFloat="true" prefHeight="25.0" prefWidth="284.0" promptText="Risposta8">
+                                 <HBox.margin>
+                                    <Insets left="50.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXCheckBox fx:id="check8" text="Corretta?">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXCheckBox>
+                              <ChoiceBox fx:id="choice8" prefHeight="25.0" prefWidth="70.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </ChoiceBox>
+                              <JFXButton fx:id="carica8" onAction="#caricaImmagineRisposta8" prefHeight="29.0" prefWidth="20.0" style="-fx-text-fill: transparent;">
+                                 <graphic>
+                                    <FontAwesomeIcon glyphName="UPLOAD" size="20" wrappingWidth="5.571428298950195" />
+                                 </graphic>
+                                 <HBox.margin>
+                                    <Insets left="30.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="30.0" />
+               </VBox.margin>
+            </ScrollPane>
+            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="510.0">
+               <children>
+                  <JFXButton fx:id="annullaButton" buttonType="RAISED" onAction="#pulsanteAnnullaCliccato" style="-fx-background-color: RED;" text="Annulla" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="60.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="aggiungiRisposta" buttonType="RAISED" onAction="#aggiungiRisposta" prefHeight="29.0" prefWidth="172.0" style="-fx-background-color: GREEN;" text="Aggiungi risposta" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="salvaButton" buttonType="RAISED" onAction="#pulsanteSalvaDomanda" style="-fx-background-color: #1E90FF;" text="Salva" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

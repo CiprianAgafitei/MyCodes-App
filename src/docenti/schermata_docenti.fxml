@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti.SchermataDocentiController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="76.0" prefWidth="562.0" style="-fx-background-color: red;">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="USER" size="30">
+                     <HBox.margin>
+                        <Insets left="20.0" right="5.0" />
+                     </HBox.margin>
+                  </FontAwesomeIcon>
+                  <Label fx:id="nomeCognomeLabel" prefHeight="64.0" prefWidth="441.0" text="Benvenuto Nome Cognome" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="logout" buttonType="RAISED" focusTraversable="false" onAction="#logOut" ripplerFill="WHITE" style="-fx-text-fill: transparent;" text=".">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="35" wrappingWidth="18.85714340209961" />
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <tooltip>
+                        <Tooltip text="Log out" />
+                     </tooltip>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="278.0" prefWidth="562.0" style="-fx-background-color: #fff;" VBox.vgrow="ALWAYS">
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="257.0" prefWidth="338.0">
+                    <columnConstraints>
+                      <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="168.0" />
+                        <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="ALWAYS" maxWidth="87.0" minWidth="0.0" prefWidth="40.0" />
+                      <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="ALWAYS" maxWidth="200.0" minWidth="10.0" prefWidth="168.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="80.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="229.0" minHeight="10.0" prefHeight="160.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="229.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="229.0" minHeight="10.0" prefHeight="138.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="52.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <HBox.margin>
+                        <Insets bottom="20.0" top="40.0" />
+                     </HBox.margin>
+                     <children>
+                        <JFXButton fx:id="verificheButton" buttonType="RAISED" focusTraversable="false" onAction="#opzioneVerificheScelto" prefHeight="140.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="FILE_TEXT" size="60" wrappingWidth="43.42856979370117" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Verifiche">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="votiButton" buttonType="RAISED" focusTraversable="false" lineSpacing="1.0" onAction="#opzioneRisultatiVerificheScelto" prefHeight="140.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="CHECK_SQUARE_ALT" size="65" wrappingWidth="45.71428680419922" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Voti">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="domandeButton" buttonType="RAISED" focusTraversable="false" onAction="#opzioneDomandeScelto" prefHeight="140.0" prefWidth="160.0" ripplerFill="WHITE" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." textAlignment="CENTER" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="QUESTION_CIRCLE" size="80" wrappingWidth="55.42856979370117" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Domande">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="impostazioniButton" buttonType="RAISED" focusTraversable="false" onAction="#impostazioniUtente" prefHeight="140.0" prefWidth="160.0" style="-fx-background-color: red; -fx-text-fill: transparent;" text="." textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="GEARS" size="70" wrappingWidth="62.28571319580078" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Impostazioni">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

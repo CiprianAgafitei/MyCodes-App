@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti_verifiche.StampaController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="48.0" prefWidth="555.0">
+                     <children>
+                        <Label text="Scarica Verifica">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="33.0" prefWidth="555.0">
+                     <children>
+                        <Label text="Selezionare la verifica da scaricare">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="248.0" prefWidth="555.0">
+                     <children>
+                        <TableView fx:id="tabellaVerifiche" prefHeight="228.0" prefWidth="343.0">
+                          <columns>
+                            <TableColumn fx:id="argomentoColonna" prefWidth="342.0" text="Argomento" />
+                          </columns>
+                           <HBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </HBox.margin>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="555.0">
+                     <children>
+                        <JFXButton fx:id="indietroButton" buttonType="RAISED" onAction="#ritornaPaginaDocente" style="-fx-background-color: red;" text="Indietro" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXTextField fx:id="cercaVerifica" focusColor="RED" labelFloat="true" promptText="Cerca verifica">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="stampaButton" buttonType="RAISED" onAction="#confermaStampa" style="-fx-background-color: #1E90FF;" text="Stampa" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children></VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

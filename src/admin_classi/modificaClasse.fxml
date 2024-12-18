@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="587.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_classi.ModificaClasseController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="47.0" prefWidth="533.0">
+                     <children>
+                        <Label text="Aggiornamento A.S. classi">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="533.0">
+                     <children>
+                        <Label text="Classe:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="choiceboxClasse" prefHeight="25.0" prefWidth="103.0">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                        <Label text="A.S.">
+                           <HBox.margin>
+                              <Insets left="100.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="yearLabel" text="YYYY/YYYY">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana Italic" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="256.0" prefWidth="587.0">
+                     <children>
+                        <TableView fx:id="tabellaStudenti" prefHeight="300.0" prefWidth="382.0">
+                          <columns>
+                            <TableColumn fx:id="idStudente" maxWidth="1000.0" prefWidth="45.0" text="ID" />
+                            <TableColumn fx:id="nomeStudente" maxWidth="2000.0" prefWidth="116.0" text="Nome" />
+                              <TableColumn fx:id="cognomeStudente" maxWidth="2000.0" prefWidth="72.0" text="Cognome" />
+                              <TableColumn fx:id="usernameStudente" maxWidth="4000.0" prefWidth="148.0" text="Username" />
+                          </columns>
+                        </TableView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="78.0" prefWidth="587.0">
+                     <children>
+                        <Label prefHeight="64.0" prefWidth="543.0" text="Tenere premuto il tasto &quot;CTRL&quot; per selezionare più studenti alla volta. (La promozione è consigliabile effettuarla in ordine decrescente rispetto agli anni)" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="72.0" prefWidth="611.0">
+                     <children>
+                        <JFXButton fx:id="annullaButton" buttonType="RAISED" onAction="#pulsanteAnnullaCliccato" style="-fx-background-color: red;" text="Annulla" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="promuoviButton" buttonType="RAISED" onAction="#pulsantePromuoviCliccato" style="-fx-background-color: #1E90FF;" text="Promuovi" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="250.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

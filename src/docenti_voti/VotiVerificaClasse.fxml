@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="650.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti_voti.VotiVerificaClasseController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <center>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="78.0" prefWidth="650.0">
+                     <children>
+                        <Label fx:id="labelVerifica" prefHeight="66.0" prefWidth="624.0" text="Risultati verifica" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font name="Verdana Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="347.0" prefWidth="650.0">
+                     <children>
+                        <LineChart fx:id="grafico" prefHeight="394.0" prefWidth="566.0">
+                          <xAxis>
+                            <CategoryAxis fx:id="studenti" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="voti" prefHeight="247.0" prefWidth="22.0" side="LEFT" upperBound="9.0" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="650.0">
+                     <children>
+                        <JFXButton fx:id="indietroButton" buttonType="RAISED" focusTraversable="false" onAction="#esciButtonPremuto" style="-fx-background-color: red;" text="Indietro" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="scaricaButton" buttonType="RAISED" focusTraversable="false" onAction="#scaricaVerifica" style="-fx-background-color: purple;" text="Scarica" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

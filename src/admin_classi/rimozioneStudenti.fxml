@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="469.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_classi.RimozioneStudenteDaClasse">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="526.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Rimozione studenti da una classe">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="322.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="tabellaStudenti" prefHeight="281.0" prefWidth="310.0">
+                    <columns>
+                      <TableColumn fx:id="usernameColumn" prefWidth="119.0" text="Username" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <HBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="124.0" prefWidth="469.0">
+               <children>
+                  <JFXButton fx:id="annullaButton" buttonType="RAISED" onAction="#pulsanteAnnullaCliccato" style="-fx-background-color: RED;" text="Annulla" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="cercaUtente" focusColor="RED" promptText="Cerca utente" unFocusColor="WHITE">
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton fx:id="confermaButton" buttonType="RAISED" onAction="#pulsanteConfermaRimozioneStudente" style="-fx-background-color: #1e90FF;" text="Conferma" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

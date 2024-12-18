@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="481.0" prefWidth="611.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="docenti_verifiche.ModificaController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="64.0" prefWidth="611.0">
+                     <children>
+                        <Label text="Modifica della verifica">
+                           <font>
+                              <Font name="Verdana Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="59.0" prefWidth="611.0">
+                     <children>
+                        <Label text="Selezionare la verifica:">
+                           <font>
+                              <Font name="Verdana" size="15.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="choiceVerifica" prefHeight="25.0" prefWidth="105.0">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="352.0" prefWidth="611.0">
+                     <children>
+                        <TableView fx:id="tabellaDomande" prefHeight="296.0" prefWidth="400.0">
+                          <columns>
+                            <TableColumn fx:id="testoDomandaColumn" prefWidth="400.0" text="Testo domanda" />
+                          </columns>
+                           <HBox.margin>
+                              <Insets bottom="20.0" top="20.0" />
+                           </HBox.margin>
+                        </TableView>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="69.0" prefWidth="611.0">
+                     <children>
+                        <JFXButton fx:id="annullaButton" buttonType="RAISED" onAction="#pulsanteAnnullaCliccato" ripplerFill="WHITE" style="-fx-background-color: red;" text="Annulla" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana Bold" size="16.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Torna indietro">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="inserisciButton" buttonType="RAISED" onAction="#pulsanteInserisciDomandaCliccato" style="-fx-background-color: green;" text="Inserisci" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Inserisci domanda">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="rimuoviButton" buttonType="RAISED" onAction="#pulsanteEliminaDomndaCliccato" style="-fx-background-color: purple;" text="Rimuovi" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Verdana Bold" size="15.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Rimuovi domanda">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="salvaButton" buttonType="RAISED" onAction="#pulsanteSalvaVerificaCliccato" ripplerFill="WHITE" style="-fx-background-color: #1e90ff;" text="Salva" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <tooltip>
+                              <Tooltip text="Salva modifiche">
+                                 <font>
+                                    <Font name="Verdana" size="13.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

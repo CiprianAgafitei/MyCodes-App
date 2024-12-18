@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_classi.InserimentoStudentiInClasse">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="75.0" prefWidth="495.0">
+               <children>
+                  <Label prefHeight="69.0" prefWidth="251.0" text="Inserimento studenti nella classe:" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Verdana Bold" size="18.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="elencoClassi" prefHeight="25.0" prefWidth="123.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="258.0" prefWidth="495.0">
+               <children>
+                  <TableView fx:id="tabellaStudenti" prefHeight="224.0" prefWidth="287.0">
+                    <columns>
+                      <TableColumn fx:id="usernameColumn" prefWidth="75.0" text="Username" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="5.0" top="5.0" />
+                     </HBox.margin>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="73.0" prefWidth="495.0">
+               <children>
+                  <JFXButton fx:id="annullaButton" buttonType="RAISED" onAction="#pulsanteAnnullaCliccato" style="-fx-background-color: RED;" text="Annulla" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="80.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="confermaButton" buttonType="RAISED" onAction="#pulsanteConfermaInserimentoStudente" style="-fx-background-color: #1E90FF;" text="Conferma" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>

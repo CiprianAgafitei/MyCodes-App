@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="434.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_utenti.StampaStudentiController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="59.0" prefWidth="531.0">
+               <children>
+                  <Label text="Scarica elenco studenti per classe">
+                     <font>
+                        <Font name="Verdana Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="252.0" prefWidth="531.0">
+               <children>
+                  <TableView fx:id="tabellaClassi" prefHeight="233.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="classeColumn" maxWidth="2000.0" prefWidth="98.0" text="Classe" />
+                      <TableColumn fx:id="nrStudentiColumn" maxWidth="2000.0" prefWidth="101.0" text="NR studenti" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="531.0">
+               <children>
+                  <JFXButton fx:id="annullaButton" buttonType="RAISED" onAction="#pulsanteAnullaCliccato" style="-fx-background-color: red;" text="Annulla" textFill="WHITE">
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="confermaStampa" buttonType="RAISED" onAction="#confermaStampaSelezionati" style="-fx-background-color: #1E90FF;" text="Conferma" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Verdana Bold" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
+
