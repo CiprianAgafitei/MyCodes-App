@@ -7,14 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
-/**Classe per gestire le tre operazioni sulla tabella degli utenti, da parte dell'amministratore,
- * ovvero:
+/**
+ * CLASS TO MANAGE THE 3 OPERATIONS ON THE USER TABLE BY THE ADMIN:
  * 
- * - b1: nuovo utente
- * - b2: rimuovi utente
- * - b3: modifica utente
+ * - b1: new user
+ * - b2: remove user
+ * - b3: edit user
  * 
- * @author cipri
+ * @author Ciprian
  *
  */
 public class ControllerUTENTI implements Initializable {
